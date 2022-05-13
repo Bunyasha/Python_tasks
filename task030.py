@@ -3,15 +3,13 @@
 
 from math import pi
 
-d = input('Введите точность вывода(количиство знаков после запятой) для числа π: ')
-while d.isdigit() != True:
-    d = input('Вы ввели что-то не то. Повторите ввод: ')
+d = input('Введите точность вывода (вещественное число до 10 знаков после запятой) для числа π: ')
 
-if d.isdigit() == True:
-    d=int(d)
-    while not 1<d<10:
-       d=int(input('Введите число от 1 до 10: '))
   
-print('Точность вывода = ', d, 'цифр после запятой')
+d1 = str(d).split('.') 
+signs_amount = len(d1[1]) 
+pi_string = str(pi) 
 
-print('Пи = ', round(pi, d))
+print('При d = ', d, ', π = ', (float(pi_string[:signs_amount+2])) )
+
+#print('Пи = ', round(pi, d))
