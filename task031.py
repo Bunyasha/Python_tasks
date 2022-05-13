@@ -5,15 +5,16 @@ while n.isdigit() != True:
 
 if n.isdigit() == True:
     n=int(n)
-list = []  
 
-i = 2
-while i * i <= n: 
-    while n % i == 0: 
-        n //= i 
+list = []  
+for i in range(2, n):
+    while n % i == 0:
         list.append(i)
-        i += 1
-    if n > 1:
-        list.append(n)
-   
-print('Cписок простых множителей числа N: ', list)    
+        n = n/i
+    if n == 1:
+        break
+
+if len(list) == 0:
+    print("Число является простым")
+else:
+    print('Cписок простых множителей числа N: ', list)    
